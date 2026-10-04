@@ -1,0 +1,71 @@
+### Obtener todos los rectángulos 
+GET http://localhost:3000/api/rectangulos
+
+
+### Crear un rectángulo correctamente
+POST http://localhost:3000/api/rectangulos
+Content-Type: application/json
+
+{
+  "medida_base": 15.5,
+  "medida_altura": 10
+}
+
+
+### Modificar un rectángulo existente
+PUT http://localhost:3000/api/rectangulos/2
+Content-Type: application/json
+
+{
+  "medida_base": 20,
+  "medida_altura": 20
+}
+
+
+### Eliminar un rectángulo
+DELETE http://localhost:3000/api/rectangulos/2
+
+
+
+### PRUEBAS DE VALIDACIONES Y ERRORES
+
+
+### Error: Intentar enviar el perímetro a mano
+POST http://localhost:3000/api/rectangulos
+Content-Type: application/json
+
+{
+  "medida_base": 5,
+  "medida_altura": 5,
+  "perimetro": 20
+}
+
+
+### Error: Enviar texto en lugar de un número
+POST http://localhost:3000/api/rectangulos
+Content-Type: application/json
+
+{
+  "medida_base": "veinte",
+  "medida_altura": 10
+}
+
+
+### Error: Enviar un número negativo
+POST http://localhost:3000/api/rectangulos
+Content-Type: application/json
+
+{
+  "medida_base": 15,
+  "medida_altura": -5
+}
+
+
+### Error: Intentar modificar con un ID inválido
+PUT http://localhost:3000/api/rectangulos/abc
+Content-Type: application/json
+
+{
+  "medida_base": 10,
+  "medida_altura": 10
+}
