@@ -1,9 +1,11 @@
+@url = http://localhost:3000/api
+
 ### Obtener todos los rectángulos 
-GET http://localhost:3000/api/rectangulos
+GET {{url}}/rectangulos
 
 
 ### Crear un rectángulo correctamente
-POST http://localhost:3000/api/rectangulos
+POST {{url}}/rectangulos
 Content-Type: application/json
 
 {
@@ -13,7 +15,7 @@ Content-Type: application/json
 
 
 ### Modificar un rectángulo existente
-PUT http://localhost:3000/api/rectangulos/2
+PUT {{url}}/rectangulos/1
 Content-Type: application/json
 
 {
@@ -23,15 +25,16 @@ Content-Type: application/json
 
 
 ### Eliminar un rectángulo
-DELETE http://localhost:3000/api/rectangulos/2
+DELETE {{url}}/rectangulos/1
 
 
-
+### ---------------------------------------------------
 ### PRUEBAS DE VALIDACIONES Y ERRORES
+### ---------------------------------------------------
 
 
 ### Error: Intentar enviar el perímetro a mano
-POST http://localhost:3000/api/rectangulos
+POST {{url}}/rectangulos
 Content-Type: application/json
 
 {
@@ -42,7 +45,7 @@ Content-Type: application/json
 
 
 ### Error: Enviar texto en lugar de un número
-POST http://localhost:3000/api/rectangulos
+POST {{url}}/rectangulos
 Content-Type: application/json
 
 {
@@ -52,7 +55,7 @@ Content-Type: application/json
 
 
 ### Error: Enviar un número negativo
-POST http://localhost:3000/api/rectangulos
+POST {{url}}/rectangulos
 Content-Type: application/json
 
 {
@@ -62,7 +65,7 @@ Content-Type: application/json
 
 
 ### Error: Intentar modificar con un ID inválido
-PUT http://localhost:3000/api/rectangulos/abc
+PUT {{url}}/rectangulos/abc
 Content-Type: application/json
 
 {
